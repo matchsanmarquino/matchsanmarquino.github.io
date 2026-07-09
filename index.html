@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MATCH UNMSM ❤️</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+const SUPABASE_URL = "https://jkevtkgxdsebqymitzvi.supabase.co";
+
+const SUPABASE_ANON_KEY = "sb_publishable_LIACbc75pPEPCVuKRtjIJw_1FfEW6gP";
+
+
+const clienteSupabase = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
+
+
+</script>
+
+
+<style>
+
+.tag-btn{
+    -webkit-tap-highlight-color: transparent;
+}
+
+</style>
+
+
+</head>
+
+
+
+<body class="bg-slate-950 text-white min-h-screen font-sans">
+
+
+<div class="max-w-md mx-auto px-4 py-8">
+
+
+
+<header class="text-center mb-8">
+
+
+<h1 class="text-5xl font-black tracking-tight 
+bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 
+bg-clip-text text-transparent">
+
+MATCH UNMSM ❤️
+
+</h1>
+
+
+<p class="text-xs text-slate-400 mt-3 uppercase tracking-widest">
+
+Encuentra personas compatibles dentro de San Marcos 🏛️
+
+</p>
+
+
+</header>
+
+
+
+
+<main class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl">
+
+
+
+<form id="matchForm" class="space-y-6">
+
+
+
+
+
+<!-- =========================
+     DATOS PERSONALES
+========================= -->
+
+
+<section>
+
+
+<h2 class="text-xs font-bold text-pink-500 uppercase mb-4">
+
+1. Tus Datos
+
+</h2>
+
+
+
+<div class="space-y-3">
+
+
+
+<input
+
+id="nombre"
+
+type="text"
+
+placeholder="Nombre o Nickname"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm outline-none focus:border-pink-500"
+
+>
+
+
+
+<input
+
+id="edad"
+
+type="number"
+
+min="17"
+
+max="25"
+
+placeholder="Edad (17 - 25)"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm outline-none focus:border-pink-500"
+
+>
+
+
+
+
+<select
+
+id="genero"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300"
+
+>
+
+
+<option value="">Selecciona tu Género</option>
+
+<option value="Hombre">
+Hombre
+</option>
+
+
+<option value="Mujer">
+Mujer
+</option>
+
+
+</select>
+
+
+
+
+
+
+<input
+
+id="facultad"
+
+type="text"
+
+placeholder="Facultad (Ej: Medicina, Sistemas)"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm outline-none focus:border-pink-500"
+
+>
+
+
+
+
+
+
+<input
+
+id="base"
+
+type="text"
+
+placeholder="Base (Ej: 2024)"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm outline-none focus:border-pink-500"
+
+>
+
+
+
+
+
+
+
+<input
+
+id="instagram"
+
+type="text"
+
+placeholder="Instagram (@usuario)"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-pink-400 outline-none focus:border-pink-500"
+
+>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<hr class="border-slate-800">
+
+
+
+
+<!-- =========================
+     ¿QUÉ SOY? (NUEVA SECCIÓN REQUERIDA)
+========================= -->
+
+
+<section>
+
+
+<h2 class="text-xs font-bold text-cyan-400 uppercase mb-2">
+
+2. ¿Qué soy? 🤔
+
+</h2>
+
+
+<p class="text-[11px] text-slate-500 mb-4">
+
+Selecciona las etiquetas físicas que te describan (puedes elegir varias).
+
+</p>
+
+
+
+<div 
+id="grupoComoSoy"
+class="flex flex-wrap gap-2"
+>
+
+
+<button
+type="button"
+data-val="flaco"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Flaco/a
+</button>
+
+
+<button
+type="button"
+data-val="alto"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Alto/a
+</button>
+
+
+<button
+type="button"
+data-val="bajo"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Bajo/a
+</button>
+
+
+<button
+type="button"
+data-val="delgado"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Delgado/a
+</button>
+
+
+<button
+type="button"
+data-val="agarrado"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Agarrado/a
+</button>
+
+
+<button
+type="button"
+data-val="gordito"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Gordito/a
+</button>
+
+
+<button
+type="button"
+data-val="lacio"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Lacio
+</button>
+
+
+<button
+type="button"
+data-val="ruloso"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Ruloso/a
+</button>
+
+
+<button
+type="button"
+data-val="con-tatuajes"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Con Tatuajes
+</button>
+
+
+<button
+type="button"
+data-val="sin-tatuajes"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Sin Tatuajes
+</button>
+
+
+<button
+type="button"
+data-val="blanco"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Blanco/a
+</button>
+
+
+<button
+type="button"
+data-val="trigueno"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Trigueño/a
+</button>
+
+
+<button
+type="button"
+data-val="moreno"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+Moreno/a
+</button>
+
+
+</div>
+
+
+</section>
+
+
+<hr class="border-slate-800">
+<!-- =========================
+     3. TRAGO FAVORITO 🍹
+========================= -->
+
+
+<section>
+
+
+<h2 class="text-xs font-bold text-amber-400 uppercase mb-2">
+
+3. Trago Favorito 🍹
+
+</h2>
+
+
+<p class="text-[11px] text-slate-500 mb-3">
+
+Elige solamente una opción (influirá directamente en tu probabilidad de match).
+
+</p>
+
+
+
+<select
+
+id="trago"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300"
+
+>
+
+
+<option value="">
+
+Selecciona tu trago favorito
+
+</option>
+
+
+<option value="Spark">
+Spark
+</option>
+
+
+<option value="Fourloko">
+Four Loko
+</option>
+
+
+<option value="Maniak">
+Maniak
+</option>
+
+
+<option value="Vino">
+Vino
+</option>
+
+
+<option value="Mikes">
+Mike's
+</option>
+
+
+<option value="No tomo">
+No Tomo
+</option>
+
+
+</select>
+
+
+
+</section>
+
+
+
+
+<hr class="border-slate-800">
+
+
+
+
+
+<!-- =========================
+     4. RANGO DE EDAD
+========================= -->
+
+
+<section>
+
+
+<h2 class="text-xs font-bold text-purple-400 uppercase mb-3">
+
+4. Rango De Edad Que Buscas
+
+</h2>
+
+
+
+<select
+
+id="rangoEdad"
+
+required
+
+class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300"
+
+>
+
+
+<option value="18-20">
+
+18 - 20 Años
+
+</option>
+
+
+<option value="20-22">
+
+20 - 22 Años
+
+</option>
+
+
+<option value="23-25">
+
+23 - 25 Años
+
+</option>
+
+
+</select>
+
+
+
+</section>
+
+
+
+
+
+
+<hr class="border-slate-800">
+
+
+
+
+
+
+<!-- =========================
+     5. GUSTOS FÍSICOS
+========================= -->
+
+
+<section>
+
+
+
+<h2 class="text-xs font-bold text-indigo-400 uppercase mb-2">
+
+5. Cosas Físicas Que Me Gustan
+
+</h2>
+
+
+
+<p class="text-[11px] text-slate-500 mb-4">
+
+Puedes elegir varias opciones (se cruzarán con lo que la otra persona marcó en "¿Qué soy?").
+
+</p>
+
+
+
+<div 
+id="grupoFisico"
+class="flex flex-wrap gap-2"
+>
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="alto"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Alto/a
+
+</button>
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="bajo"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Bajo/a
+
+</button>
+
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="delgado"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Delgado/a
+
+</button>
+
+
+
+<button
+
+type="button"
+
+data-val="flaco"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Flaco/a
+
+</button>
+
+
+
+
+<button
+
+type="button"
+
+data-val="atletico"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Atlético/a
+
+</button>
+
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="chapado"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Chapado/a
+
+</button>
+
+
+
+<button
+
+type="button"
+
+data-val="agarrado"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Agarrado/a
+
+</button>
+
+
+
+<button
+
+type="button"
+
+data-val="gordito"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Gordito/a
+
+</button>
+
+
+
+
+<button
+
+type="button"
+
+data-val="blanco"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Blanco/a
+
+</button>
+
+
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="moreno"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Moreno/a
+
+</button>
+
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="trigueno"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Trigueño/a
+
+</button>
+
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="lacio"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Cabello Lacio
+
+</button>
+
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="ruloso"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Cabello Ruloso
+
+</button>
+
+
+
+<button
+
+type="button"
+
+data-val="con-tatuajes"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Con Tatuajes
+
+</button>
+
+
+
+<button
+
+type="button"
+
+data-val="sin-tatuajes"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Sin Tatuajes
+
+</button>
+
+
+
+
+<button
+
+type="button"
+
+data-val="sonrisa"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Sonrisa Bonita
+
+</button>
+
+
+
+
+
+
+
+<button
+
+type="button"
+
+data-val="guapo"
+
+onclick="toggleSeleccion(this)"
+
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+
+>
+
+Guapo/a
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<hr class="border-slate-800">
+<!-- =========================
+     6. GUSTOS SUBJETIVOS ❤️
+========================= -->
+
+
+<section>
+
+
+<h2 class="text-xs font-bold text-emerald-400 uppercase mb-2">
+
+6. Cosas Subjetivas Que Me Gustan ❤️
+
+</h2>
+
+
+<p class="text-[11px] text-slate-500 mb-4">
+
+Selecciona las características o estilos de vida que buscas.
+
+</p>
+
+
+
+<div 
+id="grupoSubjetivo"
+class="flex flex-wrap gap-2"
+>
+
+
+
+<button
+type="button"
+data-val="futbol"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+⚽ Futbolista
+
+</button>
+
+
+
+
+<button
+type="button"
+data-val="fiestas"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🎉 Le Gusten Las Fiestas
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="vino"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🍷 Le Guste El Vino
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="estudioso"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+📚 Estudioso/a
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="cocinar"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+👨‍🍳 Que Sepa Cocinar
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="cerca"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+📍 Que Viva Cerca
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="recoger"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🚗 Que Me Recoja Diario
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="romantico"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+❤️ Romántico/a
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="divertido"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+😂 Divertido/a
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="viajar"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+✈️ Le Guste Viajar
+
+</button>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<hr class="border-slate-800">
+
+
+
+
+
+
+<!-- =========================
+     7. COMIDAS 🍽️
+========================= -->
+
+
+<section>
+
+
+<h2 class="text-xs font-bold text-orange-400 uppercase mb-2">
+
+7. Comida Que Me Gusta 🍽️
+
+</h2>
+
+
+<p class="text-[11px] text-slate-500 mb-4">
+
+Puedes elegir varias comidas favoritas.
+
+</p>
+
+
+
+<div 
+id="grupoComida"
+class="flex flex-wrap gap-2"
+>
+
+
+
+<button
+type="button"
+data-val="broaster"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🍗 Pollo Broaster
+
+</button>
+
+
+
+
+<button
+type="button"
+data-val="brasa"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🔥 Pollo A La Brasa
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="twister"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🌯 Twister De Puerta 2
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="pizza"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🍕 Pizza
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="makis"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🍣 Makis
+
+</button>
+
+
+
+
+
+<button
+type="button"
+data-val="chaufa"
+onclick="toggleSeleccion(this)"
+class="tag-btn px-3 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs"
+>
+
+🍚 Chaufa
+
+</button>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<hr class="border-slate-800">
+
+
+
+
+
+
+<!-- =========================
+     BOTON GUARDAR
+========================= -->
+
+
+<button
+
+id="btnGuardar"
+
+type="submit"
+
+class="w-full py-4 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 font-bold text-sm uppercase tracking-wider hover:scale-[1.02] transition cursor-pointer"
+
+>
+
+🚀 Guardar Mis Datos Y Buscar Match
+
+</button>
+
+
+
+
+</form>
+
+</main>
+
+
+
+
+
+
+
+<!-- =========================
+     RESULTADOS
+========================= -->
+
+
+<section
+
+id="resultadoSection"
+
+class="hidden mt-6 bg-slate-900 border border-pink-500/40 rounded-3xl p-6 shadow-xl"
+
+>
+
+
+<h2 class="text-2xl font-black text-center text-pink-500">
+
+🔥 Tus Mejores Matches
+
+</h2>
+
+
+
+<p class="text-xs text-center text-slate-400 mt-2">
+
+Mostramos hasta 2 personas con más del 60% de compatibilidad.
+
+</p>
+
+
+
+<div
+
+id="contenedorMatches"
+
+class="mt-5 space-y-4"
+
+>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+<footer class="w-full text-center py-8 mt-10 border-t border-slate-900/50 bg-slate-950/20 backdrop-blur-sm">
+    <p class="text-xs text-slate-500 flex items-center justify-center gap-1.5 tracking-wide">
+        Desarrollado por 
+        <a 
+            href="https://instagram.com/ppp_void" 
+            target="_blank" 
+            class="text-pink-400 font-semibold hover:text-pink-300 transition-colors flex items-center gap-1 hover:underline"
+        >
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+            @ppp_void
+        </a>
+    </p>
+</footer>
+
+</body>
+
+</html>
